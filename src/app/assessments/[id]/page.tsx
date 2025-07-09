@@ -14,12 +14,12 @@ export default async function Home({
   return (
     <div
       className={cn(
-        "flex items-center justify-between h-full",
+        "flex items-center justify-between h-full max-lg:flex-col",
         !assessment.readingAssessments?.id && "justify-center"
       )}
     >
       {assessment.readingAssessments?.id && <p>content ...</p>}
-      <div className="border w-fit min-w-[640px] h-full">
+      <div className="border w-fit min-w-[640px] max-lg:min-w-full h-full">
         <iframe
           src={assessment[0].FormUrl}
           width="640"
