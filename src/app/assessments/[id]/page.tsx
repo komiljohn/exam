@@ -11,20 +11,31 @@ export default async function Home({
     return <div>Assessment not found</div>;
   }
 
+  const hasReadingContent = Boolean(
+    assessment[0].ReadingAssessments?.length > 0
+  );
+  const content = assessment[0].ReadingAssessments?.[0]?.Content;
+
   return (
     <div
       className={cn(
-        "flex items-center justify-between h-full max-lg:flex-col",
-        !assessment.readingAssessments?.id && "justify-center"
+        "flex justify-between h-full max-lg:flex-col",
+        !hasReadingContent && "justify-center"
       )}
     >
-      {assessment.readingAssessments?.id && <p>content ...</p>}
-      <div className="border w-fit min-w-[640px] max-lg:min-w-full h-full">
+      {hasReadingContent && (
+        <p
+          className="p-4 whitespace-pre-wrap"
+          dangerouslySetInnerHTML={{ __html: content }}
+        ></p>
+      )}
+
+      <div className="border w-fit min-w-[50%] max-lg:min-w-full h-full">
         <iframe
           src={assessment[0].FormUrl}
-          width="640"
+          width="100%"
           height="100%"
-          className="w-full max-w-3xl border"
+          className="w-full border"
         >
           Loading…
         </iframe>
