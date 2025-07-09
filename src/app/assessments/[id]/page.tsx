@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { getAssessment } from "./queries";
+import sanitizeHtml from "sanitize-html";
 
 export default async function Home({
   params,
@@ -26,7 +27,7 @@ export default async function Home({
       {hasReadingContent && (
         <p
           className="p-4 whitespace-pre-wrap"
-          dangerouslySetInnerHTML={{ __html: content }}
+          dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }}
         ></p>
       )}
 
