@@ -29,7 +29,7 @@ export default async function Home({
           src={assessment[0].FormUrl}
           width="100%"
           height="100%"
-          className="w-full border"
+          className="w-full border max-lg:h-[700px]"
         >
           Loading…
         </iframe>

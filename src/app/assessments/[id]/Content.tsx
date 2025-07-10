@@ -19,7 +19,7 @@ export default function Content({
 
   return (
     <div className="flex flex-col justify-between">
-      <div className="overflow-y-auto max-h-[calc(100%-60px)]">
+      <div className="lg:overflow-y-auto lg:max-h-[calc(100%-60px)]">
         {contentCount && (
           <p
             className="p-4 whitespace-pre-wrap grow"

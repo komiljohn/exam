@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-[calc(100vh-55px)]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased lg:h-[calc(100vh-55px)]`}
       >
         <header className="flex items-center justify-between py-2 px-4 border-b">
           <Image src="/logo.svg" width={150} height={37} alt="Tarteeb Logo" />
