@@ -1,4 +1,13 @@
-export async function getAssessment(id: string) {
+export interface Assessment {
+  id: string;
+  FormUrl: string;
+  ReadingAssessments: {
+    id: string;
+    Content: string;
+  }[];
+}
+
+export async function getAssessment(id: string): Promise<Assessment[]> {
   const url = `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/assessments`;
 
   try {
