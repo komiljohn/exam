@@ -28,7 +28,7 @@ export default function Content({
         )}
       </div>
       <div className="flex gap-3 items-center border-t justify-center p-3">
-        <span className="font-medium">Content number: </span>
+        <span className="font-medium">Reading Passage: </span>
         <p className="flex justify-center gap-3">
           {Array.from({ length: contentCount }).map((_, idx) => (
             <Button
