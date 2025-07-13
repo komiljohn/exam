@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
+import { Bell, Wifi, Menu } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,8 +31,18 @@ export default function RootLayout({
       >
         <header className="flex items-center justify-between py-2 px-4 border-b">
           <Image src="/logo.svg" width={150} height={37} alt="Tarteeb Logo" />
-          <span className="font-medium text-2xl text-red-500">EXAM</span>
+          <div className="flex items-center gap-4">
+            <div className="text-2xl">{<Wifi />}</div>
+            <div className="text-2xl">{<Bell />}</div>
+            <div className="text-2xl">{<Menu />}</div>
+          </div>
         </header>
+        <div className="border bg-gray-100 p-[12px] m-[12px] rounded-sm">
+          <p className="font-bold text-[16px]">Part 1</p>
+          <p className="font-normal text-[14px]">
+            Read the text and answer questions 27–40.
+          </p>
+        </div>
         {children}
       </body>
     </html>
