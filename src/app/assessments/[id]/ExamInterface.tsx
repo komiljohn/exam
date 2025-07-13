@@ -25,27 +25,29 @@ export default function ExamInterface({
 
   return (
     <>
-      <ResizablePanelGroup direction="horizontal">
-        <ResizablePanel className="flex-1">
-          <Content contentCount={contentCount} content={content} />
-        </ResizablePanel>
-        <ResizableHandle withHandle />
-        <ResizablePanel>
-          <div className="border w-fit min-w-[100%] max-lg:min-w-full h-full">
-            <iframe
-              src={assessment.FormUrl}
-              width="100%"
-              height="100%"
-              className="w-full border max-lg:h-[700px]"
-            >
-              Loading…
-            </iframe>
-          </div>
-        </ResizablePanel>
-      </ResizablePanelGroup>
+      <div className="h-[80%]">
+        <ResizablePanelGroup direction="horizontal">
+          <ResizablePanel className="flex-1">
+            <Content contentCount={contentCount} content={content} />
+          </ResizablePanel>
+          <ResizableHandle withHandle />
+          <ResizablePanel>
+            <div className="border w-fit min-w-[100%] max-lg:min-w-full h-full">
+              <iframe
+                src={assessment.FormUrl}
+                width="100%"
+                height="100%"
+                className="w-full border max-lg:h-[700px]"
+              >
+                Loading…
+              </iframe>
+            </div>
+          </ResizablePanel>
+        </ResizablePanelGroup>
+      </div>
 
       {/* Bottom Navigation */}
-      <div className="flex gap-3 items-center border-t justify-center h-10 w-full">
+      <div className="flex flex-1 gap-3 items-center border-t justify-center h-10 w-full">
         {/* <span className="font-medium">Reading Passage: </span> */}
         <p className="flex justify-center items-center gap-3 w-full h-full">
           {Array.from({ length: contentCount }).map((_, idx) => (
