@@ -39,7 +39,7 @@ export default function ExamInterface({
                 height="100%"
                 className="w-full border max-lg:h-[700px]"
               >
-                Loading…
+                Loading...
               </iframe>
             </div>
           </ResizablePanel>
