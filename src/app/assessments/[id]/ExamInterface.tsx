@@ -71,7 +71,7 @@ export default function ExamInterface({
                 onClick={() => setCount(idx + 1)}
                 className={cn(
                   "cursor-pointer w-1/3 text-center flex items-center justify-center hover:bg-gray-100 h-full transition-all",
-                  isActive ? "bg-gray-300 hover:bg-gray-300 font-semibold" : ""
+                  isActive && "bg-gray-300 hover:bg-gray-300 font-semibold"
                 )}
               >
                 Part {idx + 1}
