@@ -37,12 +37,7 @@ export default function RootLayout({
             <div className="text-2xl">{<Menu />}</div>
           </div>
         </header>
-        <div className="border bg-gray-100 p-[12px] m-[12px] rounded-sm">
-          <p className="font-bold text-[16px]">Part 1</p>
-          <p className="font-normal text-[14px]">
-            Read the text and answer questions 27–40.
-          </p>
-        </div>
+
         {children}
       </body>
     </html>

@@ -24,11 +24,18 @@ export default function ExamInterface({
 }: ExamInterfaceProps) {
   const [count, setCount] = useState(1);
   const content = assessment.ReadingAssessments?.[count - 1]?.Content;
-  const questionNumbers = getReadingPassageQuestions(count);
+  const questionNumber = getReadingPassageQuestions(count);
 
   return (
     <>
-      <div className="h-[80%]">
+      <div className="border bg-gray-100 p-[12px] m-[12px] rounded-sm">
+        <p className="font-bold text-[16px]">Part {count}</p>
+        <p className="font-normal text-[14px]">
+          Read the text and answer questions {questionNumber[0]}-
+          {questionNumber[questionNumber.length - 1]}.
+        </p>
+      </div>
+      <div className="h-[80%] flex-1">
         <ResizablePanelGroup direction="horizontal">
           <ResizablePanel className="flex-1">
             <Content contentCount={contentCount} content={content} />
@@ -54,7 +61,7 @@ export default function ExamInterface({
       </div>
 
       {/* Bottom Navigation */}
-      <div className="flex flex-1 items-center border-t justify-center h-12 w-full">
+      <div className="flex items-center border-t justify-center h-10 w-full">
         <p className="flex justify-center items-center w-full h-full">
           {Array.from({ length: contentCount }).map((_, idx) => {
             const isActive = idx + 1 === count;
