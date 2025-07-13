@@ -24,7 +24,6 @@ export default function ExamInterface({
 }: ExamInterfaceProps) {
   const [count, setCount] = useState(1);
   const content = assessment.ReadingAssessments?.[count - 1]?.Content;
-  const questionNumbers = getReadingPassageQuestions(count);
 
   return (
     <>
